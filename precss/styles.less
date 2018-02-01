@@ -1,0 +1,445 @@
+@import "reset.less";
+@width-viewport: 1280px;
+@base-color: #1c555d;
+@base-light-color: #019698;
+@sale-color: #ff4f12;
+@count-color: #00c705;
+@top-background-color: #faffff;
+@main-background-color: #fffaf7;
+@white-color: #fff;
+@accent_border_color: #cecece;
+@accent-color: #3e4348;
+@main-item-color: #666;
+@aside-background-menu-color: #f4f4f4;
+@second-item-color: #4a4a4a;
+
+.imgIcon(@width: 20px, @height: @width, @rpad: 10px, @lpad: 0) {
+  max-width: @width;
+  max-height: @height;
+  padding-right: @rpad;
+  padding-left: @lpad;
+}
+
+.fillRowNoWrap() {
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  max-width: @width-viewport;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: inherit;
+    top: 0;
+    z-index: -1;
+    margin: auto;
+    left: -50vw;
+    right: -50vw;
+  }
+}
+
+.fontParams(@ame, @size: 14px, @weight: normal) {
+  font-family: @ame, sans-serif;
+  font-size: @size;
+  font-weight: @weight;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  .fontParams('Roboto');
+}
+
+/*h1, .h1 {
+  font-size: 3em;
+  margin: 0.67em 0;
+}
+
+
+h2, .h2 {
+  font-size: 2em;
+  margin: 0.83em 0;
+}
+
+h3, .h3 {
+  font-size: 1.5em;
+  margin: 1em 0;
+}*/
+a {
+  text-decoration: none;
+}
+
+.links, .links__controls, .links__item-link, .user-panel, .logo, .logo__link, .logo__info, .info-search, .short-contacts, .search-box, .pre-order, .nav-main, .content-area, .aside, .main, .slider, .hot-sections, .top-products-categories__products, .top-products-categories__to-buy, .nav-full, #footer, .net-socials {
+  display: flex;
+}
+
+.links, .links__controls, .links__item-link {
+  justify-content: flex-end;
+}
+
+.links {
+  background-color: @top-background-color;
+  .fillRowNoWrap();
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.links__controls {
+  align-items: center;
+}
+
+.links_icon, .aside__icon {
+  .imgIcon(16px);
+}
+
+.links__item:not(:last-child) {
+  border-right: 1px solid @accent_border_color;
+}
+
+.links__item-link {
+  padding: 0 25px;
+  color: inherit;
+}
+
+.user-panel {
+  background-color: @main-background-color;
+  .fillRowNoWrap();
+}
+
+.logo {
+  flex: 325px 0 0;
+}
+
+.logo__link {
+  align-items: center;
+}
+
+.logo__logo-img {
+  .imgIcon(100px);
+}
+
+.logo__info {
+  flex-wrap: wrap;
+}
+
+.logo__site {
+  .fontParams(inherit, 18px, 600);
+  text-transform: uppercase;
+}
+
+.logo__add-text {
+  font-style: italic;
+}
+
+.info-search {
+  justify-content: center;
+  align-content: stretch;
+}
+
+.contact-item__icon {
+  .imgIcon(20px, 20px, 5px);
+}
+.contact-item__text {
+  padding-right: 20px;
+}
+.navigate {
+  background-color: @base-color;
+  color: @white-color;
+  .fillRowNoWrap();
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-weight: 600;
+  font-size: 18px;
+}
+.nav-main {
+  justify-content: space-around;
+}
+
+.nav-main__item-link {
+  color: inherit;
+}
+
+.main-area {
+  background-color: @main-background-color;
+  .fillRowNoWrap();
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+.aside, .info-search {
+  flex-direction: column;
+}
+.aside {
+  flex: 325px 0 0;
+}
+
+.aside__categories {
+  background-color: @aside-background-menu-color;
+}
+.aside__caption {
+  background-color: @accent-color;
+  color: @white-color;
+  font-size: 20px;
+}
+
+.aside__item {
+  border: 1px solid @accent_border_color;
+  background-color: inherit;
+}
+
+.aside__link {
+  background-color: inherit;
+  .fontParams("Verdana", 0);
+  color: @accent-color;
+  .aside__text {
+    font-size: 16px;
+  }
+}
+.aside__link, .aside__caption {
+  padding: 17px 30px;
+  display: block;
+
+}
+
+.advs__link {
+  border: 1px solid @accent_border_color;
+}
+
+.advs__adv {
+  width: 100%;
+}
+
+#main {
+  //flex: auto 0 0;
+  margin-left: 32px;
+}
+
+#main>div {
+  margin-bottom: 25px;
+}
+
+.slider {
+  border: 1px solid @accent_border_color;
+  background-color: @white-color;
+  height: 305px;
+  color: @main-item-color;
+}
+.slider__nav-btn {
+  //height: 100%;
+  width: 30px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.slider__img-container {
+  width: 200px;
+  margin: 50px;
+  text-align: center;
+}
+
+.slider__img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.slider__info {
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.slider__caption {
+  .fontParams("Trebuchet MS", 40px, 600);
+  margin: 0;
+}
+
+.slider__note {
+  display: block;
+  color: @base-color;
+  .fontParams("Verdana", 18px, 600);
+  text-transform: uppercase;
+}
+
+.slider__description {
+  color: @second-item-color;
+}
+
+.slider__buy-btn {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid @base-color;
+  align-self: center;
+  color: @base-light-color;
+  .fontParams("Verdana", 20px, 600);
+  text-transform: lowercase;
+}
+
+.hot-sections {
+  justify-content: space-between;
+  .hot-sections__hot-section {
+    padding: 20px;
+    border: 1px solid @accent_border_color;
+    flex: auto 1 1;
+    text-align: center;
+    &:nth-child(1) {
+      .hot-sections__caption {
+        color: @base-color;
+      }
+    }
+    &:nth-child(2) {
+      margin: 0 20px;
+      .hot-sections__caption {
+        color: @sale-color;
+      }
+    }
+    &:nth-child(3) {
+      .hot-sections__caption {
+        color: @base-light-color;
+      }
+    }
+    .hot-sections__description {
+      .fontParams("Verdana", 14px, 600);
+      color: @main-item-color;
+    }
+  }
+  .hot-sections__caption {
+    .fontParams('Verdana', 30px, 600);
+    //color: @base-color;
+    .hot-sections__icon {
+      max-width: 30px;
+      height: auto;
+    }
+  }
+}
+
+.top-products-categories__top-products-category {
+  .fontParams("Verdana", 22px, 600);
+  text-transform: uppercase;
+}
+
+.top-products-categories__category-caption {
+  border-bottom: 1px solid @accent_border_color;
+  color: @second-item-color;
+  margin-bottom: 25px;
+}
+
+.top-products-categories__products {
+  margin: 0 -15px;
+}
+
+.top-products-categories__product {
+  border: 1px solid @accent_border_color;
+  flex: 200px 1 1;
+  background-color: @white-color;
+  margin: 0 15px 25px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.top-products-categories__label {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  //text-align: center;
+  .top-products-categories__label-txt {
+    .fontParams('Verdana', 12px);
+    color: @white-color;
+    vertical-align: middle;
+    text-transform: lowercase;
+  }
+}
+
+.lbl-new {
+  background-color: @base-light-color;
+}
+
+.lbl-discount {
+  background-color: @sale-color;
+}
+
+.top-products-categories__product-img {
+  max-width: 100%;
+  max-height: 100%;
+  transform: scale(-1, 1);
+  margin-top: 20px;
+}
+
+.top-products-categories__product-name {
+  .fontParams('Verdana', 18px, 600);
+  text-transform: uppercase;
+  color: @main-item-color;
+  margin: 18px 0;
+}
+
+.top-products-categories__real-price {
+  .fontParams('Verdana', 10px);
+  color: @main-item-color;
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  text-decoration: line-through;
+}
+
+.top-products-categories__product-price {
+  .fontParams('Verdana', 18px);
+  color: @base-color;
+  margin: 18px 0;
+  position: relative;
+}
+
+.top-products-categories__to-buy {
+  color: @white-color;
+  background-color: @base-color;
+  cursor: pointer;
+  .top-products-categories__buy-btn {
+    border-right: 1px solid;
+  }
+  .top-products-categories__buy-btn,
+  .top-products-categories__buy-fast-btn {
+    padding: 5px 10px;
+    text-align: center;
+  }
+  .top-products-categories__buy-icon {
+    .imgIcon(16px, 16px, 0);
+  }
+  .top-products-categories__buy-txt {
+     .fontParams('Verdana', 18px);
+     text-transform: lowercase;
+   }
+}
+
+.nav-full, #footer {
+  .fillRowNoWrap();
+}
+.nav-full {
+  background-color: @accent-color;
+  //justify-content: flex-start;
+  color: @white-color;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  a {
+    color: inherit;
+  }
+  > div {
+    flex: auto 1 1;
+  }
+}
+
+#footer {
+  background-color: #151f20;
+  color: @white-color;
+}
+
+.net-socials__icon {
+  .imgIcon();
+}
