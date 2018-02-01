@@ -193,6 +193,7 @@ a {
   padding-right: 20px;
   position: relative;
   max-width: 1280px;
+  justify-content: space-between;
 }
 .user-panel::after {
   content: '';
@@ -562,19 +563,23 @@ a {
 }
 .nav-full {
   background-color: #3e4348;
+  justify-content: space-between;
   color: #fff;
   padding-top: 27px;
   padding-bottom: 27px;
+  /*> div {
+    flex: auto 1 1;
+  }*/
 }
 .nav-full a {
   color: inherit;
 }
-.nav-full > div {
-  flex: auto 1 1;
-}
 #footer {
   background-color: #151f20;
   color: #fff;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  justify-content: space-between;
 }
 .net-socials__icon {
   max-width: 20px;
